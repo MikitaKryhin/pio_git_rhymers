@@ -8,6 +8,9 @@ import edu.kis.vh.nursery.factory.RhymersFactory;
  * dostarczonych przez RhymersFactory. Tworzy instancje rymowanek, wykonuje na nich
  * operacje liczenia i wyświetla wyniki.
  */
+
+
+//PROJEKT JEST POPRAWNY
 class RhymersDemo {
 
     public static final int INT = 15;
