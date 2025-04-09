@@ -3,6 +3,11 @@ package edu.kis.vh.nursery;
 import edu.kis.vh.nursery.factory.DefaultRhymersFactory;
 import edu.kis.vh.nursery.factory.RhymersFactory;
 
+/**
+ * Klasa RhymersDemo demonstruje działanie różnych implementacji rymowanek
+ * dostarczonych przez RhymersFactory. Tworzy instancje rymowanek, wykonuje na nich
+ * operacje liczenia i wyświetla wyniki.
+ */
 class RhymersDemo {
 
     public static final int INT = 15;
@@ -11,9 +16,24 @@ class RhymersDemo {
     public static final int J = 0;
     public static final int BOUND = 20;
 
+    /**
+     * Główna metoda demonstracyjna. Inicjalizuje fabrykę rymowanek i uruchamia
+     * testowanie rymowanek poprzez wywołanie metody testRhymers.
+     *
+     * @param args Argumenty wiersza poleceń (nieużywane w tej demonstracji)
+     */
     public static void main(String[] args) {
         RhymersFactory factory = new DefaultRhymersFactory();
-        
+        testRhymers(factory);
+    }
+
+    /**
+     * Testuje rymowanki poprzez tworzenie instancji za pomocą podanej fabryki,
+     * wykonywanie operacji countIn i wyświetlanie wyników operacji countOut.
+     *
+     * @param factory Fabryka RhymersFactory używana do tworzenia instancji rymowanek
+     */
+    public static void testRhymers(RhymersFactory factory) {
         DefaultCountingOutRhymer[] rhymers = { factory.GetStandardRhymer(), factory.GetFalseRhymer(),
                 factory.GetFIFORhymer(), factory.GetHanoiRhymer()};
         
@@ -33,7 +53,5 @@ class RhymersDemo {
         
         System.out.println("total rejected is "
                 + ((HanoiRhymer) rhymers[INT1]).reportRejected());
-        
     }
-    
 }
